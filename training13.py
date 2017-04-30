@@ -68,33 +68,6 @@ def run_training():
   img_height=224
 
   base_model = VGG16(weights='imagenet', include_top=False)
-    
-  base_model.layers.pop()#layer18
-  
-  base_model.layers.pop()#layer17
-
-  base_model.layers.pop()#layer16
-  
-  base_model.layers.pop()#layer15
-  
-  base_model.layers.pop()#layer14
-  
-  base_model.layers.pop()#layer13
-  
-  base_model.layers.pop()#layer12
-
-  base_model.layers.pop()#layer11
-
-  base_model.layers.pop()#layer10
-  '''
-  base_model.layers.pop()#layer9
-
-  base_model.layers.pop()#layer8
-
-  base_model.layers.pop()#layer7
-  '''
-
-
   x = base_model.output
   x = GlobalAveragePooling2D()(x)
   x = Dense(256, activation='relu')(x)
